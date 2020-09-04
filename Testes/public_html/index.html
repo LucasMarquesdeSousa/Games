@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .teclas{
+                background-color: #990099;
+                width: 30vw;
+                height: 20vw;
+                /*                display: flex;
+                                flex-direction: row;
+                                flex-wrap: wrap;*/
+            }
+            .ind{
+                background-color: #66ffff;
+                width: 2vw;
+                height: 2vw;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="myBtn" value="1" onclick="return myFunction();"> W </button>
+        <button id="myBtn2" value="2" onclick="return myFunction2();">A </button>
+        <button id="myBtn3" value="3" onclick="return myFunction3();"> S </button>
+        <button id="myBtn4" value="4" onclick="return myFunction4();">D </button>
+
+
+        <p id="demo"></p>
+
+
+        <script>
+            if(document.getElementById("myBtn").value){
+                var x = document.getElementById("myBtn").value;
+                document.getElementById("demo").innerHTML = x;
+            }else if(document.getElementById("myBtn").value){
+                var x = document.getElementById("myBtn").value;
+                document.getElementById("demo").innerHTML = x;
+            }
+            //var x = document.getElementById("myBtn2").value;
+            //var x = document.getElementById("myBtn3").value;
+            //var x = document.getElementById("myBtn4").value;
+            //function myFunction(x) {
+                
+            //    document.getElementById("demo").innerHTML = x;
+            //}
+           /* function myFunction2() {
+                var y = document.getElementById("myBtn2").value;
+                document.getElementById("demo").innerHTML = y;
+            }
+            function myFunction3() {
+                var z = document.getElementById("myBtn3").value;
+                document.getElementById("demo").innerHTML = z;
+            }
+            function myFunction4() {
+                var w = document.getElementById("myBtn4").value;
+                document.getElementById("demo").innerHTML = w;
+            }
+            */
+        </script>
+    </body>
+</html>
