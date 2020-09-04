@@ -73,7 +73,7 @@ function Ganhador(ti, u) {
         CalculaVencedor(ti, us)
     }
     else if (vetor[1] && vetor[2] && vetor[3] && vetor[4] && vetor[5] && vetor[6] && vetor[7] && vetor[8] && vetor[9] != undefined) {
-        var us = "game over"
+        var us = "Nenhum dos dois jogadores é o vencedor"
         ti = ""
         CalculaVencedor(ti, us)
     }
