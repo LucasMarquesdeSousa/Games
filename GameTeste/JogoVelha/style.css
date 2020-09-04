@@ -1,0 +1,49 @@
+.campo{
+    background-color: rgb(12, 112, 29);
+    width: 120px;
+    height: 120px;
+    float: left;
+    margin: 5px 3px 5px 10px;
+}
+.menu{
+    width: 450px;
+    height: 450px;
+    
+}
+body{
+    background: brown;
+}
+h1{
+    font-size: 30pt;
+    font-family: Arial;
+}
+.foto{
+    width:  100px;
+    height: 100px;
+}
+.fotocampo{
+    width: 100%;
+    height: 100%;
+}
+.ven{
+    font-size: 20pt;
+    text-align: center;
+    background: maroon;
+    padding: 10px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgb(7, 7, 7);
+}
+.asd{
+    font-size: 25pt;
+    position: relative;
+    left: 455px;
+    top: -580px;
+}
+.reniciador{
+    position: relative;
+    top: -585px;
+    width: 450px;
+    height: 30px;
+    background: darkslategray;
+    color: white;
+}
