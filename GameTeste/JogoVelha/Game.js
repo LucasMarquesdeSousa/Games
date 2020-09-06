@@ -1,17 +1,15 @@
-var reni = document.getElementById("res")
-var campo = document.getElementsByClassName("campo")
-var resutadoG = document.getElementById("menu")
-var res = document.getElementById("res")
 var jogador1 = "X"
 var jogador2 = "O"
 var jogadorVez = jogador1;
 var gameover = false
 var placarj1 = 0
 var placarj2 = 0
-var vetor = []
+var vetor = [];
+var campo = document.getElementsByClassName("campo")
+var resutadoG = document.getElementById("menu")
+var res = document.getElementById("res")
 CarregarVez()
 jogando()
-
 function CarregarVez() {
     // carrega o menu do jogo e fica trocando do X para O e vice-versa 
     var ima = document.getElementById("h1")
@@ -22,6 +20,7 @@ function CarregarVez() {
     }
 }
 function jogando() {
+    //função dos clicks do jogador e mostrar nos campos se é X ou O
     for (var i = 0; i < campo.length; i++) {
         campo[i].addEventListener("click", function () {
             if (this.getElementsByClassName("fotocampo").length == 0) {
@@ -40,11 +39,10 @@ function jogando() {
                         var u = this.getAttribute("value");
                         jogadorVez = jogador1
                     }
-                    
+                    CarregarVez();
+                    Ganhador(ti, u);
                 }
             }
-            CarregarVez();
-            Ganhador(ti, u);
         })
     }
 }
@@ -52,33 +50,27 @@ function Ganhador(ti, u) {
     //verificar o se o X ou O completou uma linha ou coluna
     vetor[u] = ti;
     if ((vetor[1] == vetor[2] && vetor[1] == vetor[3] && vetor[1] != undefined) || (vetor[1] == vetor[4] && vetor[1] == vetor[7] && vetor[1] != undefined) || (vetor[1] == vetor[5] && vetor[1] == vetor[9] && vetor[1] != undefined)) {
-        var us = vetor
         ti = vetor[1]
-        CalculaVencedor(ti, us)
+        CalculaVencedor(ti)
     } else if ((vetor[2] == vetor[1] && vetor[2] == vetor[3] && vetor[2] != undefined) || (vetor[2] == vetor[5] && vetor[2] == vetor[8]) && vetor[2] != undefined) {
-        var us = vetor
         ti = vetor[2]
-        CalculaVencedor(ti, us)
+        CalculaVencedor(ti)
     } else if ((vetor[3] == vetor[1] && vetor[3] == vetor[2] && vetor[3] != undefined) || (vetor[3] == vetor[6] && vetor[3] == vetor[9] && vetor[3] != undefined) || (vetor[3] == vetor[5] && vetor[3] == vetor[7] && vetor[3] != undefined)) {
-        var us = vetor
         ti = vetor[3]
         CalculaVencedor(ti, us)
     } else if ((vetor[4] == vetor[5] && vetor[4] == vetor[6] && vetor[4] != undefined)) {
-        var us = vetor
         ti = vetor[4]
-        CalculaVencedor(ti, us)
+        CalculaVencedor(ti)
     } else if (vetor[7] == vetor[8] && vetor[7] == vetor[9] && vetor[7] != undefined) {
-        var us = vetor
         ti = vetor[7]
-        CalculaVencedor(ti, us)
+        CalculaVencedor(ti)
     }
     else if (vetor[1] && vetor[2] && vetor[3] && vetor[4] && vetor[5] && vetor[6] && vetor[7] && vetor[8] && vetor[9] != undefined) {
-        var us = "Nenhum dos dois jogadores é o vencedor"
         ti = ""
-        CalculaVencedor(ti, us)
+        CalculaVencedor(ti)
     }
 }
-function CalculaVencedor(ti, u) {
+function CalculaVencedor(ti) {
     //função para verificar quem venceu e mostrar o placar
     if (ti == jogador1) {
         resutadoG.innerHTML = ""
@@ -96,43 +88,34 @@ function CalculaVencedor(ti, u) {
     }
     res.innerHTML = ""
     res.innerHTML += `<div class='asd'>Jogador X: ${placarj1}</div><br>`
-    res.innerHTML += `<div class='asd'>Jogador O : ${placarj2}</div><br>`
+    res.innerHTML += `<div class='asd'>Jogador O: ${placarj2}</div><br>`
     gameover = true
-    var botao = document.createElement("button")
+    var botao = document.createElement("button") // geral botão para reniciar a partida
     botao.innerHTML = "Reniciar"
     botao.setAttribute("class", "reniciador")
     botao.setAttribute("onclick", "Reniciar()")
-    reni.appendChild(botao)
+    res.appendChild(botao)
 }
-res.innerHTML = ""
-res.innerHTML += `<div class='asd'>Jogador X: ${placarj1}</div><br>`
-res.innerHTML += `<div class='asd'>Jogador O : ${placarj2}</div><br>`
+res.innerHTML = "";
+res.innerHTML += `<div class='asd'>Jogador X: ${placarj1}</div><br>`;
+res.innerHTML += `<div class='asd'>Jogador O : ${placarj2}</div><br>`;
 function Reniciar() {
-    //função que renicia o campo de jogo para o estado do começo
+    //função que renicia o CAMPO de jogo para o estado do começo
+    jogadorVez = jogador1;
+    gameover = false
+    vetor = []
+    resutadoG.innerHTML = ""
+    res.innerHTML = ""
+    res.innerHTML = `<div class='asd'>Jogador X: ${placarj1}</div><br>`
+    res.innerHTML += `<div class='asd'>Jogador O : ${placarj2}</div><br>`
     var campo2 = document.getElementsByClassName("campo")
     for (var i = 0; i < campo2.length; i++) {
         campo2[i].innerHTML = ""
         campo2[i].setAttribute("jogador", "")
     }
-    jogadorVez = jogador1;
-    gameover = false
-    reni.innerHTML = ""
-    vetor = []
-    res.innerHTML = ""
-    res.innerHTML = `<div class='asd'>Jogador X: ${placarj1}</div><br>`
-    res.innerHTML += `<div class='asd'>Jogador O : ${placarj2}</div><br>`
-    resutadoG.innerHTML = `
-        <div value="1" class="campo" jogador=""> </div>
-        <div value="2" class="campo" jogador=""> </div>
-        <div value="3" class="campo" jogador=""> </div>
-
-        <div value="4" class="campo"  jogador=""> </div>
-        <div value="5" class="campo" jogador=""> </div>
-        <div value="6" class="campo" jogador=""> </div>
-
-        <div value="7" class="campo" jogador=""> </div>
-        <div value="8" class="campo" jogador=""> </div>
-        <div value="9" class="campo" jogador=""> </div>`
+    for (var i = 1; i <= 9; i++) {
+        resutadoG.innerHTML += `<div value="${i}" class="campo" jogador="" > </div>`
+    }
     CarregarVez()
     jogando()
 }
