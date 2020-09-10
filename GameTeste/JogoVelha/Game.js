@@ -100,6 +100,7 @@ res.innerHTML = "";
 res.innerHTML += `<div class='asd'>Jogador X: ${placarj1}</div><br>`;
 res.innerHTML += `<div class='asd'>Jogador O: ${placarj2}</div><br>`;
 function Reniciar() {
+    
     //função que renicia o CAMPO de jogo para o estado do começo
     jogadorVez = jogador1;
     gameover = false

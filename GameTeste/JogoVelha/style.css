@@ -32,6 +32,7 @@ h1{
     padding: 10px;
     margin: auto;
     box-shadow: 3px 3px 10px rgb(7, 7, 7);
+    border-radius: 20px;
 }
 .asd{
     font-size: 25pt;
@@ -46,4 +47,11 @@ h1{
     height: 30px;
     background: darkslategray;
     color: white;
+    border-radius: 20px;
+}
+.reniciador:hover{
+    transition: 0.4s;
+    background: rgb(0, 0, 0);
+    color: yellow;
+    font-size: 15pt;
 }
