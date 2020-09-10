@@ -107,7 +107,7 @@ function Reniciar() {
     resutadoG.innerHTML = ""
     res.innerHTML = ""
     res.innerHTML = `<div class='asd'> Jogador X: ${placarj1}</div><br>`
-    res.innerHTML += `<div class='asd'>Jogador O:${placarj2}</div><br>`
+    res.innerHTML += `<div class='asd'>Jogador O: ${placarj2}</div><br>`
     var campo2 = document.getElementsByClassName("campo")
     for (var i = 0; i < campo2.length; i++) {
         campo2[i].innerHTML = ""
