@@ -14,7 +14,7 @@ function CarregarVez() {
     // carrega o menu do jogo e fica trocando do X para O e vice-versa 
     var ima = document.getElementById("h1")
     if (jogadorVez == jogador1) {
-        ima.innerHTML = "<h1> Vez do jogador: <img class='foto' src='foto/X.jpg'></h1>"
+        ima.innerHTML = "<h1> Vez do jogador: <img class='foto' src='foto/X.png'></h1>"
     } else {
         ima.innerHTML = "<h1> Vez do jogador: <img class='foto' src='foto/O.png'></h1>"
     }
@@ -27,7 +27,7 @@ function jogando() {
                 //metodo que fica vericando quando e qual usuário clicou no campo e controlar 
                 if (gameover == false) {
                     if (jogadorVez == jogador1) {
-                        this.innerHTML = "<img class='fotocampo' id='foto' src='foto/X.jpg'> "
+                        this.innerHTML = "<img class='fotocampo' id='foto' src='foto/X.png'> "
                         this.setAttribute("jogador", jogador1)
                         var ti = this.getAttribute("jogador")
                         var u = this.getAttribute("value");
@@ -57,7 +57,7 @@ function Ganhador(ti, u) {
         CalculaVencedor(ti)
     } else if ((vetor[3] == vetor[1] && vetor[3] == vetor[2] && vetor[3] != undefined) || (vetor[3] == vetor[6] && vetor[3] == vetor[9] && vetor[3] != undefined) || (vetor[3] == vetor[5] && vetor[3] == vetor[7] && vetor[3] != undefined)) {
         ti = vetor[3]
-        CalculaVencedor(ti, us)
+        CalculaVencedor(ti)
     } else if ((vetor[4] == vetor[5] && vetor[4] == vetor[6] && vetor[4] != undefined)) {
         ti = vetor[4]
         CalculaVencedor(ti)
@@ -106,8 +106,8 @@ function Reniciar() {
     vetor = []
     resutadoG.innerHTML = ""
     res.innerHTML = ""
-    res.innerHTML = `<div class='asd'>Jogador X: ${placarj1}</div><br>`
-    res.innerHTML += `<div class='asd'>Jogador O : ${placarj2}</div><br>`
+    res.innerHTML = `<div class='asd'> Jogador X: ${placarj1}</div><br>`
+    res.innerHTML += `<div class='asd'>Jogador O:${placarj2}</div><br>`
     var campo2 = document.getElementsByClassName("campo")
     for (var i = 0; i < campo2.length; i++) {
         campo2[i].innerHTML = ""
